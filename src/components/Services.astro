@@ -1,0 +1,47 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Branding",
+    description:
+      "Damos forma a marcas con una identidad propia, reconocible y coherente en cada punto de contacto.",
+    image: "/section-images/services-images/branding-micelio.webp",
+    imageAlt: "Huella dorada que representa la identidad única de una marca",
+    tags: ["Estrategia de marca", "Dirección de arte", "Diseño gráfico"],
+  },
+  {
+    number: "02",
+    title: "Desarrollo web",
+    description:
+      "Creamos sitios claros y funcionales que convierten buenas ideas en experiencias digitales memorables.",
+    image: "/section-images/services-images/web-micelio.webp",
+    imageAlt: "Globo terráqueo escultórico como símbolo de conexión digital",
+    tags: ["Diseño UX/UI", "Desarrollo web", "Mantenimiento"],
+  },
+  {
+    number: "03",
+    title: "Marketing digital",
+    description:
+      "Conectamos tu proyecto con las personas correctas mediante contenido y estrategias con dirección.",
+    image: "/section-images/services-images/marketing-micelio.webp",
+    imageAlt:
+      "Composición de placas metálicas ascendentes que representa el crecimiento",
+    tags: ["SEO", "Contenido", "Campañas digitales"],
+  },
+];
+---
+
+<section class="services section-pad" id="servicios">
+  <div class="section-label">
+    <span>03 / NUESTROS SERVICIOS</span><span>DE LA IDEA A LA EXPERIENCIA</span>
+  </div>
+  <div class="section-heading services-heading">
+    <h2>Todo nace<br />de una <em>buena idea.</em></h2>
+    <p>Y cada buena idea necesita la forma<br />adecuada para crecer.</p>
+  </div>
+  <div class="service-list">
+    {services.map((service) => <ServiceCard {...service} />)}
+  </div>
+</section>

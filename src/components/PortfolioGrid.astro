@@ -1,0 +1,77 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+
+const projects = [
+  {
+    number: "01",
+    title: "Casa Nómada",
+    category: "Identidad & experiencia digital",
+    className: "project-nomada",
+    label: "hospitalidad consciente",
+    image: "/section-images/projects-images/casa-nomada.svg",
+    description:
+      "Identidad de marca y sitio de reservas para un refugio de descanso: calidez, calma y una experiencia fluida en cualquier pantalla.",
+  },
+  {
+    number: "02",
+    title: "Forma Estudio",
+    category: "Dirección de arte & desarrollo web",
+    className: "project-forma",
+    label: "objetos para habitar",
+    image: "/section-images/projects-images/forma-estudio.svg",
+    description:
+      "Dirección de arte y sitio editorial para un estudio de diseño de objetos: composición sobria que deja respirar cada pieza.",
+  },
+  {
+    number: "03",
+    title: "Botánica Viva",
+    category: "E-commerce & estrategia digital",
+    className: "project-botanica",
+    label: "cultivar lo esencial",
+    image: "/section-images/projects-images/botanica-viva.svg",
+    description:
+      "Tienda online de plantas con catálogo, carrito y pago simple, pensada para convertir visitas en nuevos hogares verdes.",
+  },
+];
+---
+
+<section class="exhibition" id="exposicion">
+  <div class="section-pad">
+    <div class="section-label">
+      <span>02 / PROYECTOS</span><span>UNA SELECCIÓN DE IDEAS</span>
+    </div>
+    <div class="section-heading">
+      <h2>Obras <em>que hablan.</em></h2>
+      <p>
+        Cada proyecto, una nueva manera de contar<br />lo que hace única a una
+        marca.
+      </p>
+    </div>
+  </div>
+  {
+    projects.map((project, i) => (
+      <a
+        class={`project-section ${project.className}${i % 2 ? " is-reversed" : ""}`}
+        style={`--project-image: url('${project.image}')`}
+        href="#contacto"
+        aria-label={`Conoce más sobre ${project.title}`}
+      >
+        <div class="project-info">
+          <span class="project-index">{project.number} / 03</span>
+          <span class="project-label">{project.label}</span>
+          <h3>{project.title}</h3>
+          <span class="project-category">{project.category}</span>
+          <p>{project.description}</p>
+          <span class="project-cta">
+            DESCUBRIR <ArrowUpRight size={14} strokeWidth={1.5} />
+          </span>
+        </div>
+      </a>
+    ))
+  }
+  <div class="section-pad">
+    <div class="exhibition-note">
+      <span>—</span> Las marcas son ficticias. Las posibilidades, infinitas.
+    </div>
+  </div>
+</section>

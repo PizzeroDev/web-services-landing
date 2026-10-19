@@ -1,0 +1,41 @@
+---
+import { ArrowDown, ArrowUpRight } from "lucide-astro";
+---
+
+<section class="hero" id="inicio">
+  <div class="hero-copy">
+    <p class="eyebrow">
+      <span class="eyebrow-dot"></span> BRANDING
+      <span>·</span> DESARROLLO WEB <span>·</span> MARKETING DIGITAL
+    </p>
+    <h1>
+      Diseño y tecnología para potenciar tu <em>marca.</em>
+    </h1>
+    <div class="hero-bottom">
+      <p>
+        Nos ocupamos de la identidad visual de tu proyecto y creamos estrategias
+        para alcanzar tus objetivos con experiencias digitales modernas.
+      </p>
+      <div class="hero-actions">
+        <a class="hero-cta" href="#contacto">
+          Hablemos de tu proyecto
+          <ArrowUpRight size={16} strokeWidth={1.6} />
+        </a>
+        <a
+          class="round-link"
+          href="#manifiesto"
+          aria-label="Descubre nuestro manifiesto"
+        >
+          <ArrowDown size={19} strokeWidth={1.5} />
+        </a>
+      </div>
+    </div>
+  </div>
+  <figure class="hero-visual">
+    <img
+      src="/section-images/dispositivos-micelio.png"
+      alt="Dispositivos digitales con la identidad de Micelio sobre una columna de mármol"
+      fetchpriority="high"
+    />
+  </figure>
+</section>

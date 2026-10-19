@@ -1,0 +1,31 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  tags: string[];
+}
+
+const { number, title, description, image, imageAlt, tags } = Astro.props;
+---
+
+<article class="service-item">
+  <div class="service-image">
+    <img src={image} alt={imageAlt} loading="lazy" />
+    <!-- <span class="service-number">{number}</span> -->
+  </div>
+  <div class="service-content">
+    <div class="service-title-row">
+      <h3>{title}</h3>
+      <span class="service-spark" aria-hidden="true">✳</span>
+    </div>
+    <div class="service-description">
+      <p>{description}</p>
+      <div class="service-tags">
+        {tags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+  </div>
+</article>
